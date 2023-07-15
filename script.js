@@ -1,8 +1,12 @@
 const searchMovieForm = document.querySelector("#searchForm");
 
+window.addEventListener('load',()=>{
+  fetchMovieData('ram');
+})
 searchMovieForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const search = document.querySelector("#searchMovie");
+  if(!search.value)return;
   fetchMovieData(search.value);
   search.value = "";
 });
